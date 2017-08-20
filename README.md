@@ -94,3 +94,136 @@ Postman-Token: fc147580-2b6f-1cdc-d3e0-61cbe9219af0`
     },
     "total": 52
 }`
+
+# SicuroTrack API
+
+## Get Incidents
+
+### Request uses Basic Authorization based on username and password provided as well as an App-Key
+
+`GET /api/1.0/pois HTTP/1.1
+Host: www.sicurotrack.com
+Authorization: Basic <INSERT BASE 64-ENCODED username and password>
+App-Key: <INSERT APP KEY HERE>
+Cache-Control: no-cache
+Postman-Token: 0335c45a-63bf-00ec-bc05-24395c7da66d
+`
+
+### Response is returned in JSON format. Fields returned are shown below
+
+`{
+    "total": 930,
+    "pois": [
+        {
+            "id": 880720892554932224,
+            "icon": {
+                "id": 0,
+                "url": "http://localhost:8080/Images/Iconos/POI/000.png"
+            },
+            "label": "label test",
+            "description": "description test",
+            "coordinate": {
+                "lat": 40.639503,
+                "lng": -4.857809
+            },
+            "created": 1498815198,
+            "lastmodified": 1498815198
+        },
+        {
+            "id": 880721058288656384,
+            "icon": {
+                "id": 0,
+                "url": "http://localhost:8080/Images/Iconos/POI/000.png"
+            },
+            "label": "label test 2",
+            "description": "description test",
+            "coordinate": {
+                "lat": 40.639503,
+                "lng": -4.857809
+            },
+            "created": 1498815237,
+            "lastmodified": 1498815237
+        },
+        {
+            "id": 880721090656104448,
+            "icon": {
+                "id": 1,
+                "url": "http://localhost:8080/Images/Iconos/POI/001.png"
+            },
+            "label": "label test 3",
+            "description": "description test",
+            "coordinate": {
+                "lat": 40.639503,
+                "lng": -4.857809
+            },
+            "created": 1498815245,
+            "lastmodified": 1498815245
+        },
+        {
+            "id": 880721216799797248,
+            "icon": {
+                "id": 1,
+                "url": "http://localhost:8080/Images/Iconos/POI/001.png"
+            },
+            "label": "label test 5",
+            "description": "description test",
+            "coordinate": {
+                "lat": 40.639503,
+                "lng": -4.857809
+            },
+            "created": 1498815275,
+            "lastmodified": 1498815275
+        },
+        ...
+        {
+           "id": 881074107473477632,
+           "icon": {
+               "id": 189,
+               "url": "http://localhost:8080/Images/Iconos/POI/189.png"
+           },
+           "label": "2017-06-30 |  ARREST - ISF arrested a wanted crimi",
+           "description": "ISF arrested a wanted criminal on charges of premeditated murder in the Ameria area of west Baghdad on Friday. ",
+           "coordinate": {
+               "lat": 33.315661,
+               "lng": 44.341121
+           },
+           "created": 1498899411,
+           "lastmodified": 1498899411
+       }
+   ]
+}`
+
+## Create Incidents
+
+### Request uses Basic Authorization based on username and password provided as well as an App-Key. A POST request with POI data in body is sent
+
+`POST /api/1.0/pois HTTP/1.1
+Host: www.sicurotrack.com
+Authorization: Basic <INSERT BASE 64-ENCODED username and password>
+App-Key: <INSERT APP KEY HERE>
+Content-Type: application/x-www-form-urlencoded
+Cache-Control: no-cache
+Postman-Token: 58d055c1-fb02-74b4-068d-f45aac92d5a1
+
+iconid=46&label=RegroupPOI&description=RegroupPOI&coordinate=40.639503%2C-4.857809
+`
+
+### Response is returned in JSON format. Fields returned depend on requested fields e.g., "fields=Incident.id,Incident.remarks,Incident.latitude,Incident.longitude,Country.name,Type.name,Type.id,Incident.date"
+
+`{
+    "poi": {
+        "id": 899280338335875072,
+        "icon": {
+            "id": 46,
+            "url": "http://localhost:8080/Images/Iconos/POI/046.png"
+        },
+        "label": "Regroupas",
+        "description": "Regroupasd",
+        "coordinate": {
+            "lat": 40.639503,
+            "lng": -4.857809
+        },
+        "created": 1503240115,
+        "lastmodified": 1503240115
+    }
+}`
