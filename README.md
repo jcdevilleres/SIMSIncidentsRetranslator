@@ -1,8 +1,8 @@
-#SIMS API
+# SIMS API
 
-##Get Incidents
+## Get Incidents
 
-###Request uses Basic Authorization based on API token provided, different filters e.g., countries, time period, incident type and others.
+### Request uses Basic Authorization based on API token provided, different filters e.g., countries, time period, incident type and others.
 
 `GET /api/incident?country_id[]=2&amp;search_from=2017-07-22&amp;search_to=2017-07-22&amp;fields=Incident.id,Incident.remarks,Incident.latitude,Incident.longitude,Country.name,Type.name,Type.id,Incident.date HTTP/1.1
 Host: simsplatform.com
@@ -10,7 +10,7 @@ Authorization: Basic <INSERT TOKEN KEY HERE>
 Cache-Control: no-cache
 Postman-Token: fc147580-2b6f-1cdc-d3e0-61cbe9219af0`
 
-###Response is returned in JSON format. Fields returned depend on requested fields e.g., "fields=Incident.id,Incident.remarks,Incident.latitude,Incident.longitude,Country.name,Type.name,Type.id,Incident.date"
+### Response is returned in JSON format. Fields returned depend on requested fields e.g., "fields=Incident.id,Incident.remarks,Incident.latitude,Incident.longitude,Country.name,Type.name,Type.id,Incident.date"
 
 `{
     "message": "",
@@ -65,7 +65,6 @@ Postman-Token: fc147580-2b6f-1cdc-d3e0-61cbe9219af0`
                 "mgrs": "38S LF 22491 21723",
                 "weight": 1
             },
-
             ...
             {
                 "id": "286905",
