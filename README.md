@@ -204,7 +204,6 @@ App-Key: <INSERT APP KEY HERE>
 Content-Type: application/x-www-form-urlencoded
 Cache-Control: no-cache
 Postman-Token: 58d055c1-fb02-74b4-068d-f45aac92d5a1
-
 iconid=46&label=RegroupPOI&description=RegroupPOI&coordinate=40.639503%2C-4.857809`
 
 ### Response is returned in JSON format. Fields returned depend on requested fields e.g., "fields=Incident.id,Incident.remarks,Incident.latitude,Incident.longitude,Country.name,Type.name,Type.id,Incident.date"
